@@ -280,6 +280,10 @@ linkcheck_ignore = [
     r'https://unix.org/version2/whatsnew/lp64_wp.html',
 ]
 
+if 'CI' in os.environ:
+    linkcheck_ignore.insert(0, r'https://bugs.python.org/.*')
+    linkcheck_ignore.insert(1, r'https://github.com/python/cpython/issues/\d+')
+
 
 # Options for extensions
 # ----------------------

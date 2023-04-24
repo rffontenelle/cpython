@@ -1,0 +1,27 @@
+{
+  "problemMatcher": [
+    {
+      "owner": "sphinx",
+      "pattern": [
+        {
+          "file": 1,
+          "line": 2,
+          "message": 3,
+          "regexp": "^(.*):(\\d+):\\s+\\ERROR:\\s+broken\\s+(.*)$"
+        }
+      ]
+    },
+    {
+      "owner": "sphinx-warn",
+      "pattern": [
+        {
+          "file": 1,
+          "line": 2,
+          "message": 3,
+          "regexp": "^(.*):(\\d+):\\s+\\WARNING:\\s+redirect\\s+(.*)$"
+        }
+      ],
+      "severity": "warning"
+    }
+  ]
+}

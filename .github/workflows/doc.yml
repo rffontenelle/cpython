@@ -103,3 +103,22 @@ jobs:
     # Use "xvfb-run" since some doctest tests open GUI windows
     - name: 'Run documentation doctest'
       run: xvfb-run make -C Doc/ PYTHON=../python SPHINXERRORHANDLING="-W --keep-going" doctest
+
+  # Run linkcheck for find broken and redirected links
+  linkcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - uses: actions/checkout@v3
+    - name: Register Sphinx problem matcher
+      run: echo "::add-matcher::.github/problem-matchers/sphinx-linkcheck.json"
+    - name: 'Set up Python'
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3'
+        cache: 'pip'
+        cache-dependency-path: 'Doc/requirements.txt'
+    - name: 'Install build dependencies'
+      run: make -C Doc/ venv
+    - name: 'Run linkcheck in the documentation'
+      run: make -C Doc/ linkcheck SPHINXOPTS="--keep-going -D linkcheck_retries=3" SPHINXERRORHANDLING=""

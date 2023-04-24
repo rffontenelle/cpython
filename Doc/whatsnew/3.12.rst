@@ -564,7 +564,7 @@ Demos and Tools
 
 * Remove the ``Tools/demo/`` directory which contained old demo scripts. A copy
   can be found in the `old-demos project
-  <https://github.com/gvanrossum/old-demos>`_.
+  <https://dgithub.com/gvanrossum/old-demos>`_.
   (Contributed by Victor Stinner in :gh:`97681`.)
 
 * Remove outdated example scripts of the ``Tools/scripts/`` directory.
