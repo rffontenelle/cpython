@@ -1020,8 +1020,8 @@ For more complicated input parsing, regular expressions are more powerful
 than C's ``sscanf`` and better suited for the task.
 
 
-What does 'UnicodeDecodeError' or 'UnicodeEncodeError' error  mean?
--------------------------------------------------------------------
+What does 'UnicodeDecodeError' or 'UnicodeEncodeError' error mean?
+------------------------------------------------------------------
 
 See the :ref:`unicode-howto`.
 
